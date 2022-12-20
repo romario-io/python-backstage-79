@@ -1,0 +1,37 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "test"
+  description: "test"
+  annotations:
+    github.com/project-slug: romario-io/python-backstage-79
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: dev-test
+    backstage.io/kubernetes-id: "test"
+    sonarqube.org/project-key: "test"
+    grafana/tag-selector: "kubernetes"
+    prometheus.io/rule: container_cpu_usage_seconds_total{namespace="test"}
+    prometheus.io/alert: all
+  links:
+    - url: https://test.romario.io
+      title: Website
+      icon: Website
+    - url: https://grafana.romario.io/
+      title: Dashboard
+      icon: dashboard      
+    - url: https://alerts.romario.io/
+      title: Alerts
+      icon: alert 
+    - url: https://argocd.backstage.local/applications/dev-test?resource=
+      title: ArgoCD
+      icon: cloud
+  tags:
+    - golang
+    - "lab"
+    - "service"
+    - "experimental"
+spec:
+  system: "lab"
+  type:  "service"
+  lifecycle: "experimental"
+  owner: "romario-io"
